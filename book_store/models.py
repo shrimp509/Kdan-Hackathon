@@ -1,5 +1,4 @@
 from django.db import models
-from member.models import User
 
 
 # Create your models here.
@@ -21,7 +20,7 @@ class Book(models.Model):
 class BookInBookStore(models.Model):
     book_store = models.ForeignKey(BookStore, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey('member.User', on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.book_store) + ': ' + str(self.book)

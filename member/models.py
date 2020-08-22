@@ -1,6 +1,4 @@
 from django.db import models
-from book_store.models import Book
-from book_store.models import BookStore
 
 
 # Create your models here.
@@ -15,8 +13,8 @@ class User(models.Model):
 
 class PurchaseHistory(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    book_store = models.ForeignKey(BookStore, on_delete=models.CASCADE)
+    book = models.ForeignKey('book_store.Book', on_delete=models.CASCADE)
+    book_store = models.ForeignKey('book_store.BookStore', on_delete=models.CASCADE)
     transaction_amount = models.FloatField()
     transaction_date = models.DateTimeField()
 
