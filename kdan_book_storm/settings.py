@@ -25,7 +25,7 @@ SECRET_KEY = '3dvr$z*+!v_y_+-i8xsw38&r_@zcr7h(rva5*jk(vo!7sm=f6-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'book_store',
+    'member'
 ]
 
 MIDDLEWARE = [
