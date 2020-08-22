@@ -21,7 +21,7 @@ class Test_Member_Related_API(TestCase):
         response = self.client.get("book")
         self.assertEqual(response.status_code, 200)
 
-
+        
 """
 (1) List all book stores that are open at a certain datetime
 (2) List all book stores that are open on a day of the week, at a certain time

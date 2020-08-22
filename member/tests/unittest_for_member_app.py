@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.db.models import DecimalField, CharField, ImageField, BooleanField, DateTimeField, FloatField
 
-from bookstore.models import bookstore
+from book_store.models import BookStore
 
 class TestBookStoreFieldType(TestCase):
 
