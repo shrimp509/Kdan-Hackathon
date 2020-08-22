@@ -6,3 +6,6 @@ book_store/migrations/__pycache__/
 member/__pycache__/
 member/migrations/__pycache__/
 .DS_Store
+book_store/tests/__pycache__/
+member/tests/__pycache__/
+kdan_book_storm/__pycache__/settings.cpython-37.pyc

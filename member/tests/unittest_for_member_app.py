@@ -3,6 +3,7 @@ from django.db.models import DecimalField, CharField, ImageField, BooleanField, 
 
 from member.models import PurchaseHistory, User
 
+
 class TestBookStoreFieldType(TestCase):
 
     # 針對 Table: User

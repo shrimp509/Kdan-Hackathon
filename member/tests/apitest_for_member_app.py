@@ -1,7 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import resolve
 
-from shop.views import shop_view
 
 class Test_Member_Related_API(TestCase):
 

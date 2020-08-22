@@ -7,6 +7,7 @@ import datetime
 from django.utils.timezone import make_aware
 
 from .models import User, PurchaseHistory
+from book_store.models import *
 
 
 ####################
