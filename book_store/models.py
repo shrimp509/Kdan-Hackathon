@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class BookStore(models.Model):
-    store_name = models.CharField(max_length=100)
+    store_name = models.CharField(max_length=100, default="")
     cash_balance = models.FloatField()
 
     def __str__(self):
@@ -11,7 +11,7 @@ class BookStore(models.Model):
 
 
 class Book(models.Model):
-    book_name = models.CharField(max_length=100)
+    book_name = models.CharField(max_length=100, default="")
 
     def __str__(self):
         return str(self.book_name)
@@ -20,7 +20,7 @@ class Book(models.Model):
 class BookInBookStore(models.Model):
     book_store = models.ForeignKey(BookStore, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    price = models.FloatField()
+    price = models.FloatField(default=0)
 
     def __str__(self):
         return str(self.book_store) + ': ' + str(self.book) + ': ' + str(self.price)

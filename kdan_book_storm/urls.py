@@ -24,23 +24,23 @@ API_PREFIX = 'api/v1'
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path(API_PREFIX + '/book'),  # POST
-    path(API_PREFIX + '/book/<int:id>'),  # GET,DELETE,PUT
-
-    path(API_PREFIX + '/bookstore'),  # POST
-    path(API_PREFIX + '/bookstore/<int:id>'),  # GET,DELETE,PUT
+    # path(API_PREFIX + '/book', ),  # POST
+    # path(API_PREFIX + '/book/<int:id>'),  # GET,DELETE,PUT
+    #
+    # path(API_PREFIX + '/bookstore'),  # POST
+    # path(API_PREFIX + '/bookstore/<int:id>'),  # GET,DELETE,PUT
 
     path(API_PREFIX + '/user', add_user),  # POST
     path(API_PREFIX + '/user/<int:id>', update_user),  # GET,DELETE,PUT
 
-    path(API_PREFIX + '/opening_hour'),  # POST
-    path(API_PREFIX + '/opening_hour/<int:id>'),  # GET,DELETE,PUT
-
-    path(API_PREFIX + '/books_in_bookstore'),  # POST
-    path(API_PREFIX + '/books_in_bookstore/<int:id>'),  # GET,DELETE,PUT
-
-    path(API_PREFIX + '/purchase_history'),  # POST
-    path(API_PREFIX + '/purchase_history/<int:id>'),  # GET,DELETE,PUT
+    # path(API_PREFIX + '/opening_hour'),  # POST
+    # path(API_PREFIX + '/opening_hour/<int:id>'),  # GET,DELETE,PUT
+    #
+    # path(API_PREFIX + '/books_in_bookstore'),  # POST
+    # path(API_PREFIX + '/books_in_bookstore/<int:id>'),  # GET,DELETE,PUT
+    #
+    # path(API_PREFIX + '/purchase_history'),  # POST
+    # path(API_PREFIX + '/purchase_history/<int:id>'),  # GET,DELETE,PUT
 
     # # parameters:
     # # * at: timestamp
