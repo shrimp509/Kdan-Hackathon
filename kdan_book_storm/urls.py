@@ -16,71 +16,73 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from member.apis import add_user, update_user
+
 
 API_PREFIX = 'api/v1'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path(API_PREFIX + '/book', ),  # POST
-    path(API_PREFIX + '/book/<int:id>'),  # GET,DELETE,PUT
+    # path(API_PREFIX + '/book', ),  # POST
+    # path(API_PREFIX + '/book/<int:id>'),  # GET,DELETE,PUT
+    #
+    # path(API_PREFIX + '/bookstore'),  # POST
+    # path(API_PREFIX + '/bookstore/<int:id>'),  # GET,DELETE,PUT
 
-    path(API_PREFIX + '/bookstore'),  # POST
-    path(API_PREFIX + '/bookstore/<int:id>'),  # GET,DELETE,PUT
+    path(API_PREFIX + '/user', add_user),  # POST
+    path(API_PREFIX + '/user/<int:id>', update_user),  # GET,DELETE,PUT
 
-    path(API_PREFIX + '/user'),  # POST
-    path(API_PREFIX + '/user/<int:id>'),  # GET,DELETE,PUT
-
-    path(API_PREFIX + '/opening_hour'),  # POST
-    path(API_PREFIX + '/opening_hour/<int:id>'),  # GET,DELETE,PUT
-
-    path(API_PREFIX + '/books_in_bookstore'),  # POST
-    path(API_PREFIX + '/books_in_bookstore/<int:id>'),  # GET,DELETE,PUT
-
-    path(API_PREFIX + '/purchase_history'),  # POST
-    path(API_PREFIX + '/purchase_history/<int:id>'),  # GET,DELETE,PUT
-
-    # parameters:
-    # * at: timestamp
-    # * hour_open_more_than / hour_open_less_than:
-    # * book_more_than / book_less_than:
-    # * price_min / price_max
-    path(API_PREFIX + '/bookstore/list'),  # GET
-
-    # parameters:
-    # * store_name
-    path(API_PREFIX + '/bookstore/search'),  # GET
-
-    # parameters
-    # by: transaction_volume, number_of_transactions, transaction_dollar_value
-    path(API_PREFIX + '/bookstore/popular'),  # GET
-
-    # parameters:
-    # * price_min:
-    # * price_max:
-    path(API_PREFIX + '/book/list'),  # GET
-
-    # parameters:
-    # * book_name
-    path(API_PREFIX + '/book/search'),  # GET
-
-    # parameters:
-    # * transaction_dollar_value_more_than / transaction_dollar_value_less_than
-    # * date_min / date_max:
-    path(API_PREFIX + '/user/list'),  # GET
-
-    # parameters:
-    # * top:
-    # * date_min / date_max:
-    path(API_PREFIX + '/user/search'),   # GET
-
-    # parameters:
-    # * date_min / date_max:
-    path(API_PREFIX + '/purchase_history/search'),  # GET
-
-    # body:
-    # * user_id
-    # * book_id
-    # * bookstore_id
-    path(API_PREFIX + '/purchase')  # POST
+    # path(API_PREFIX + '/opening_hour'),  # POST
+    # path(API_PREFIX + '/opening_hour/<int:id>'),  # GET,DELETE,PUT
+    #
+    # path(API_PREFIX + '/books_in_bookstore'),  # POST
+    # path(API_PREFIX + '/books_in_bookstore/<int:id>'),  # GET,DELETE,PUT
+    #
+    # path(API_PREFIX + '/purchase_history'),  # POST
+    # path(API_PREFIX + '/purchase_history/<int:id>'),  # GET,DELETE,PUT
+    #
+    # # parameters:
+    # # * at: timestamp
+    # # * hour_open_more_than / hour_open_less_than:
+    # # * book_more_than / book_less_than:
+    # # * price_min / price_max
+    # path(API_PREFIX + '/bookstore/list'),  # GET
+    #
+    # # parameters:
+    # # * store_name
+    # path(API_PREFIX + '/bookstore/search'),  # GET
+    #
+    # # parameters
+    # # by: transaction_volume, number_of_transactions, transaction_dollar_value
+    # path(API_PREFIX + '/bookstore/popular'),  # GET
+    #
+    # # parameters:
+    # # * price_min:
+    # # * price_max:
+    # path(API_PREFIX + '/book/list'),  # GET
+    #
+    # # parameters:
+    # # * book_name
+    # path(API_PREFIX + '/book/search'),  # GET
+    #
+    # # parameters:
+    # # * transaction_dollar_value_more_than / transaction_dollar_value_less_than
+    # # * date_min / date_max:
+    # path(API_PREFIX + '/user/list'),  # GET
+    #
+    # # parameters:
+    # # * top:
+    # # * date_min / date_max:
+    # path(API_PREFIX + '/user/search'),   # GET
+    #
+    # # parameters:
+    # # * date_min / date_max:
+    # path(API_PREFIX + '/purchase_history/search'),  # GET
+    #
+    # # body:
+    # # * user_id
+    # # * book_id
+    # # * bookstore_id
+    # path(API_PREFIX + '/purchase')  # POST
 ]
