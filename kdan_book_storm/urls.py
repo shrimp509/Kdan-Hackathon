@@ -46,6 +46,7 @@ urlpatterns = [
     # parameters:
     # * at: timestamp
     # * hour_open_more_than / hour_open_less_than:
+    # * unit: day / week
     # * book_more_than / book_less_than:
     # * price_min / price_max
     path(API_PREFIX + '/bookstore/list', list_bookstores),  # GET
