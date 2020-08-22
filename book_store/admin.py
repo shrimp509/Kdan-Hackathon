@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from .models import BookStore, Book, BookInBookStore
+
 # Register your models here.
 from book_store.models import *
 
