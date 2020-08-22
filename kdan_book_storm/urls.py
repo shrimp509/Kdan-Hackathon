@@ -20,8 +20,8 @@ from member.apis import add_user, update_user
 from member.apis import add_purchase_history, update_purchase_history
 from book_store.apis import add_book, update_book
 from book_store.apis import add_bookstore, update_bookstore
-from book_store.apis import add_books_in_bookstore, update_books_in_bookstore
-from book_store.apis import add_opening_hour, update_opening_hour
+#from book_store.apis import add_books_in_bookstore, update_books_in_bookstore
+#from book_store.apis import add_opening_hour, update_opening_hour
 
 
 API_PREFIX = 'api/v1'
@@ -29,8 +29,8 @@ API_PREFIX = 'api/v1'
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path(API_PREFIX + '/book', add_book),  # POST
-    path(API_PREFIX + '/book/<int:id>', update_book),  # GET,DELETE,PUT
+    path(API_PREFIX + '/book', add_book),  # POST                                  #先測試這個
+    path(API_PREFIX + '/book/<int:id>', update_book),  # GET,DELETE,PUT            #先測試這個
 
     path(API_PREFIX + '/bookstore', add_bookstore),  # POST
     path(API_PREFIX + '/bookstore/<int:id>', update_bookstore),  # GET,DELETE,PUT
@@ -38,11 +38,11 @@ urlpatterns = [
     path(API_PREFIX + '/user', add_user),  # POST
     path(API_PREFIX + '/user/<int:id>', update_user),  # GET,DELETE,PUT
 
-    path(API_PREFIX + '/opening_hour', add_opening_hour),  # POST
-    path(API_PREFIX + '/opening_hour/<int:id>', update_opening_hour),  # GET,DELETE,PUT
+    #path(API_PREFIX + '/opening_hour', add_opening_hour),  # POST
+    #path(API_PREFIX + '/opening_hour/<int:id>', update_opening_hour),  # GET,DELETE,PUT
 
-    path(API_PREFIX + '/books_in_bookstore', add_books_in_bookstore),  # POST
-    path(API_PREFIX + '/books_in_bookstore/<int:id>', update_books_in_bookstore),  # GET,DELETE,PUT
+    #path(API_PREFIX + '/books_in_bookstore', add_books_in_bookstore),  # POST
+    #path(API_PREFIX + '/books_in_bookstore/<int:id>', update_books_in_bookstore),  # GET,DELETE,PUT
 
     path(API_PREFIX + '/purchase_history', add_purchase_history),  # POST
     path(API_PREFIX + '/purchase_history/<int:id>', update_purchase_history),  # GET,DELETE,PUT
@@ -52,7 +52,7 @@ urlpatterns = [
     # * hour_open_more_than / hour_open_less_than:
     # * book_more_than / book_less_than:
     # * price_min / price_max
-    path(API_PREFIX + '/bookstore/list'),  # GET
+    #path(API_PREFIX + '/bookstore/list'),  # GET
     #
     # # parameters:
     # # * store_name
