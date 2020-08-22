@@ -28,8 +28,8 @@ class BookInBookStore(models.Model):
 
 class OpeningHour(models.Model):
     book_store = models.ForeignKey(BookStore, on_delete=models.CASCADE)
-    open_time = models.IntegerField()
-    close_time = models.IntegerField()
+    open_time = models.DateTimeField()
+    close_time = models.DateTimeField()
 
     def __str__(self):
         return str(self.book_store) + ': ' + str(self.open_time) + '\t' + str(self.close_time)
