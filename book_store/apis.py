@@ -248,8 +248,14 @@ def _delete_books_in_bookstore(id):
 
 
 def _list_bookstores_with_timestamp(at):
-    OpeningHour.objects.filter(open_time=at)
-    return _json_response(200)
+    try:
+        bookstores = []
+        query = BookStore.objects.raw(f"SELECT DISTINCT book_store_bookstore.id, book_store_bookstore.store_name FROM book_store_openinghour INNER JOIN book_store_bookstore ON book_store_openinghour.book_store_id = book_store_bookstore.id WHERE time({at}) BETWEEN time(open_time) AND time(close_time)")
+        for bookstore in query:
+            bookstores.append(bookstore.store_name)
+        return _json_response(200, bookstores=bookstores)
+    except:
+        return _json_response(400, err_msg="not found??")
 
 
 ####################
