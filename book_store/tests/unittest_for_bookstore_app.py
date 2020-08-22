@@ -1,5 +1,5 @@
 from django.test import TestCase
-from django.db.models import DecimalField, CharField, ImageField, BooleanField, DateTimeField, FloatField
+from django.db.models import DecimalField, CharField, ImageField, BooleanField, DateTimeField, FloatField, IntegerField
 
 from book_store.models import BookStore
 from book_store.models import Book
@@ -27,13 +27,13 @@ class TestBookStoreFieldType(TestCase):
     def test_open_time_field_type(self):
         self.assertTrue(isinstance(
             self.get_OpeningHour_field("open_time"),
-            DateTimeField
+            IntegerField
         ))
 
     def test_close_time_field_type(self):
         self.assertTrue(isinstance(
             self.get_OpeningHour_field("close_time"),
-            DateTimeField
+            IntegerField
         ))
 
     # 針對 Table: Books
