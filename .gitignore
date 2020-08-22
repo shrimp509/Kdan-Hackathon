@@ -1,1 +1,4 @@
 .idea
+kdan_book_storm/__pycache__/
+book_store/__pycache__/
+member/__pycache__/
