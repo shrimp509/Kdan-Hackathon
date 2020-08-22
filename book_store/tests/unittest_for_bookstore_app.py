@@ -10,8 +10,8 @@ class TestBookStoreFieldType(TestCase):
 
     # 針對 Table: BookStores
     def test_book_store_name_field_type(self):
-        print("BookStores")
-        print(type(self.get_BookStore_field("store_name")))
+        #print("BookStores")
+        #print(type(self.get_BookStore_field("store_name")))
         self.assertTrue(isinstance(
             self.get_BookStore_field("store_name"),
             CharField
@@ -48,7 +48,7 @@ class TestBookStoreFieldType(TestCase):
     def test_price_field_type(self):
         #assert_same_type(self, "price", CharField)
         self.assertTrue(isinstance(
-            self.get_BooksInBookStore_field("price"),
+            self.get_BookInBookStore_field("price"),
             FloatField
         ))
 # ===================================================== #
@@ -61,5 +61,5 @@ class TestBookStoreFieldType(TestCase):
     def get_Book_field(self, field_name):
         return Book._meta.get_field(field_name)
                 
-    def get_BooksInBookStore_field(self, field_name):
+    def get_BookInBookStore_field(self, field_name):
         return BookInBookStore._meta.get_field(field_name)

@@ -24,7 +24,7 @@ API_PREFIX = 'api/v1'
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path(API_PREFIX + '/book', ),  # POST
+    path(API_PREFIX + '/book'),  # POST
     path(API_PREFIX + '/book/<int:id>'),  # GET,DELETE,PUT
 
     path(API_PREFIX + '/bookstore'),  # POST
