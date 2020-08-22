@@ -1,1 +1,1 @@
-from member.tests import apitest_for_member_app, unittest_for_member_app
+from member.tests import test_apitest_for_member_app, test_unittest_for_member_app

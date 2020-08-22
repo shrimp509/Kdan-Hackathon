@@ -1,1 +1,1 @@
-from book_store.tests import unittest_for_bookstore_app, apitest_for_bookstore_app
+from book_store.tests import test_unittest_for_bookstore_app, test_apitest_for_bookstore_app
