@@ -25,13 +25,13 @@ class TestBookStoreFieldType(TestCase):
     def test_open_time_field_type(self):
         self.assertTrue(isinstance(
             self.get_OpeningHour_field("open_time"),
-            IntegerField
+            DateTimeField
         ))
 
     def test_close_time_field_type(self):
         self.assertTrue(isinstance(
             self.get_OpeningHour_field("close_time"),
-            IntegerField
+            DateTimeField
         ))
 
     # 針對 Table: Books
