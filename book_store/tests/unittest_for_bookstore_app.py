@@ -10,6 +10,8 @@ class TestBookStoreFieldType(TestCase):
 
     # 針對 Table: BookStores
     def test_book_store_name_field_type(self):
+        print("BookStores")
+        print(type(self.get_BookStore_field("store_name")))
         self.assertTrue(isinstance(
             self.get_BookStore_field("store_name"),
             CharField
