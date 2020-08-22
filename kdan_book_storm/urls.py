@@ -16,12 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from member.apis import add_user, update_user
-from member.apis import add_purchase_history, update_purchase_history
-from book_store.apis import add_book, update_book
-from book_store.apis import add_bookstore, update_bookstore
-#from book_store.apis import add_books_in_bookstore, update_books_in_bookstore
-#from book_store.apis import add_opening_hour, update_opening_hour
+from member.apis import *
+from book_store.apis import *
 
 
 API_PREFIX = 'api/v1'
@@ -52,8 +48,8 @@ urlpatterns = [
     # * hour_open_more_than / hour_open_less_than:
     # * book_more_than / book_less_than:
     # * price_min / price_max
-    #path(API_PREFIX + '/bookstore/list'),  # GET
-    #
+    path(API_PREFIX + '/bookstore/list', list_bookstores),  # GET
+
     # # parameters:
     # # * store_name
     # path(API_PREFIX + '/bookstore/search'),  # GET

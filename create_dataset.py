@@ -8,6 +8,7 @@ from member.models import *
 import json
 import re
 from datetime import datetime
+from datetime import timedelta
 from django.utils.timezone import make_aware
 
 
@@ -55,12 +56,14 @@ def extract_duration(text):
 def extract_time(text):
     time_text = text.split(' ')[0]
     if ':' not in time_text:
-        time = int(time_text)
+        time = int(time_text) * 60
     else:
         tokens = time_text.split(':')
         time = int(tokens[0]) * 60 + int(tokens[1])
-    if 'pm' in time_text:
+    if 'pm' in text:
         time += 12 * 60
+    if time == 12 * 60 or time == 24 * 60:
+        time -= 12 * 60
     return time
 
 
@@ -73,6 +76,7 @@ def create_dataset():
 
     book_store_model_map = {}
     book_model_map = {}
+    reference_datetime = make_aware(datetime.strptime('08/02/2020', '%m/%d/%Y'))
 
     for book_store in book_stores:
         store_name = book_store['storeName']
@@ -90,8 +94,8 @@ def create_dataset():
         for week_day in opening_hours:
             opening_hour_model = OpeningHour()
             opening_hour_model.book_store = book_store_model
-            opening_hour_model.open_time = opening_hours[week_day][0]
-            opening_hour_model.close_time = opening_hours[week_day][1]
+            opening_hour_model.open_time = reference_datetime + timedelta(minutes=opening_hours[week_day][0])
+            opening_hour_model.close_time = reference_datetime + timedelta(minutes=opening_hours[week_day][1])
             opening_hour_model.save()
         print('===')
 

@@ -111,10 +111,16 @@ def update_books_in_bookstore(request: WSGIRequest, id: int):
         return _delete_books_in_bookstore(id)
 
 
+def list_bookstores(request: WSGIRequest):
+    if request.method == 'GET':
+        return _list_bookstores_with_timestamp(request.GET.get('at'))
+    else:
+        return _json_response(400, err_msg="not found")
+
+
 ####################
 # Sub API methods
 ####################
-
 
 def _get_book(id: int):
     try:
@@ -239,6 +245,11 @@ def _delete_books_in_bookstore(id):
         return _json_response(200, status='ok')
     except:
         return _json_response(400, err_msg="not found")
+
+
+def _list_bookstores_with_timestamp(at):
+    OpeningHour.objects.filter(open_time=at)
+    return _json_response(200)
 
 
 ####################
