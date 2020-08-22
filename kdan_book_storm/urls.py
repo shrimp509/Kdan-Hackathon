@@ -52,7 +52,7 @@ urlpatterns = [
     # * hour_open_more_than / hour_open_less_than:
     # * book_more_than / book_less_than:
     # * price_min / price_max
-    path(API_PREFIX + '/bookstore/list'),  # GET
+    # path(API_PREFIX + '/bookstore/list'),  # GET
     #
     # # parameters:
     # # * store_name
