@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath kdan_book_storm kdan_book_storm.wsgi
