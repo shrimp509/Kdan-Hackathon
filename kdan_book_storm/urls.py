@@ -51,6 +51,10 @@ urlpatterns = [
     # * store_name
     path(API_PREFIX + '/bookstore/search'),  # GET
 
+    # parameters
+    # by: transaction_volume, number_of_transactions, transaction_dollar_value
+    path(API_PREFIX + '/bookstore/popular'),  # GET
+
     # parameters:
     # * price_min:
     # * price_max:
@@ -61,9 +65,22 @@ urlpatterns = [
     path(API_PREFIX + '/book/search'),  # GET
 
     # parameters:
+    # * transaction_dollar_value_more_than / transaction_dollar_value_less_than
+    # * date_min / date_max:
+    path(API_PREFIX + '/user/list'),  # GET
+
+    # parameters:
     # * top:
     # * date_min / date_max:
     path(API_PREFIX + '/user/search'),   # GET
 
-    path(API_PREFIX + '')
+    # parameters:
+    # * date_min / date_max:
+    path(API_PREFIX + '/purchase_history/search'),  # GET
+
+    # body:
+    # * user_id
+    # * book_id
+    # * bookstore_id
+    path(API_PREFIX + '/purchase')  # POST
 ]
